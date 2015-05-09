@@ -51,6 +51,7 @@ public class NestedFieldsFetcher {
 			}
 			map.put(nestedPath, nestedField);
 			if (!nestedField.getType().isPrimitive()
+					&& nestedField.getType().isArray()
 					&& !fieldTypes().contains(nestedField.getType().toString())) {
 				// It's User defined Field
 				Object nestedObj = nestedField.get(obj);
